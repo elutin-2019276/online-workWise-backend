@@ -1,4 +1,5 @@
-//Configuración Express
+//Configuración de Express
+
 //Importaciones
 import express from 'express'
 import cors from 'cors'
