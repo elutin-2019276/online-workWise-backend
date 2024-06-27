@@ -1,0 +1,176 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "WorkWise",
+    "collectionId": "c573fe2e-9096-4645-b7ea-361820aa6546",
+    "dateExported": "2024-06-27T02:34:51.111Z",
+    "version": "1.2",
+    "folders": [
+        {
+            "_id": "c2db28a2-baf6-4c39-8127-a2e1f5648f89",
+            "name": "user",
+            "containerId": "",
+            "created": "2024-06-27T02:14:24.025Z",
+            "sortNum": 10000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "3693ea9f-3f6d-415f-b127-df1bd2fccbad",
+            "colId": "c573fe2e-9096-4645-b7ea-361820aa6546",
+            "containerId": "c2db28a2-baf6-4c39-8127-a2e1f5648f89",
+            "name": "register",
+            "url": "/user/register",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-06-27T02:14:30.593Z",
+            "modified": "2024-06-27T02:18:20.300Z",
+            "headers": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "Edgar"
+                    },
+                    {
+                        "name": "surname",
+                        "value": "Lutin"
+                    },
+                    {
+                        "name": "username",
+                        "value": "elutin"
+                    },
+                    {
+                        "name": "password",
+                        "value": "123"
+                    },
+                    {
+                        "name": "phone",
+                        "value": "12345678"
+                    },
+                    {
+                        "name": "locality",
+                        "value": "Ciudad de Guatemala"
+                    },
+                    {
+                        "name": "profession",
+                        "value": "Maestro"
+                    },
+                    {
+                        "name": "role",
+                        "value": "Empleador"
+                    }
+                ]
+            }
+        },
+        {
+            "_id": "846a8ef9-3c00-43e3-b261-89fdf231ae6a",
+            "colId": "c573fe2e-9096-4645-b7ea-361820aa6546",
+            "containerId": "c2db28a2-baf6-4c39-8127-a2e1f5648f89",
+            "name": "login",
+            "url": "/user/login",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-06-27T02:19:46.609Z",
+            "modified": "2024-06-27T02:20:37.623Z",
+            "headers": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "username",
+                        "value": "elutin"
+                    },
+                    {
+                        "name": "password",
+                        "value": "123"
+                    }
+                ]
+            }
+        },
+        {
+            "_id": "7ab3de8e-580a-4062-8bde-f8239dd4cbcf",
+            "colId": "c573fe2e-9096-4645-b7ea-361820aa6546",
+            "containerId": "c2db28a2-baf6-4c39-8127-a2e1f5648f89",
+            "name": "update",
+            "url": "/user/updateUser/667ccc1db2b06e96d30e3379",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2024-06-27T02:21:26.729Z",
+            "modified": "2024-06-27T02:32:20.153Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NjdjY2MxZGIyYjA2ZTk2ZDMwZTMzNzkiLCJ1c2VybmFtZSI6ImVsdXRpbiIsIm5hbWUiOiJFZGdhciIsInJvbGUiOiJFbXBsZWFkb3IiLCJpYXQiOjE3MTk0NTQ4MzcsImV4cCI6MTcxOTQ2NTYzN30.iq7u4VAJL2TZ0UQc0zOJJ9fwiqYjxNbj8JlbpS6AlRc"
+                }
+            ],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "Josué"
+                    },
+                    {
+                        "name": "surname",
+                        "value": "Noj"
+                    },
+                    {
+                        "name": "phone",
+                        "value": "31240090"
+                    },
+                    {
+                        "name": "locality",
+                        "value": "Ciudad de México"
+                    },
+                    {
+                        "name": "profession",
+                        "value": "Programador"
+                    },
+                    {
+                        "name": "username",
+                        "value": "jnoj"
+                    }
+                ]
+            }
+        },
+        {
+            "_id": "002e31c0-7da8-4b33-a8b5-7d9a34e2adc7",
+            "colId": "c573fe2e-9096-4645-b7ea-361820aa6546",
+            "containerId": "c2db28a2-baf6-4c39-8127-a2e1f5648f89",
+            "name": "getUser",
+            "url": "/user/getUser",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-06-27T02:24:00.532Z",
+            "modified": "2024-06-27T02:24:07.315Z",
+            "headers": []
+        },
+        {
+            "_id": "726b86f5-1c3f-4392-8c38-333a52eda41c",
+            "colId": "c573fe2e-9096-4645-b7ea-361820aa6546",
+            "containerId": "c2db28a2-baf6-4c39-8127-a2e1f5648f89",
+            "name": "delete",
+            "url": "/user/deleteUser/667ccc1db2b06e96d30e3379",
+            "method": "DELETE",
+            "sortNum": 60000,
+            "created": "2024-06-27T02:32:31.151Z",
+            "modified": "2024-06-27T02:33:01.885Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NjdjY2MxZGIyYjA2ZTk2ZDMwZTMzNzkiLCJ1c2VybmFtZSI6ImVsdXRpbiIsIm5hbWUiOiJFZGdhciIsInJvbGUiOiJFbXBsZWFkb3IiLCJpYXQiOjE3MTk0NTQ4MzcsImV4cCI6MTcxOTQ2NTYzN30.iq7u4VAJL2TZ0UQc0zOJJ9fwiqYjxNbj8JlbpS6AlRc"
+                }
+            ]
+        }
+    ],
+    "settings": {
+        "options": {
+            "baseUrl": "localhost:2880"
+        }
+    },
+    "ref": "53plIIYMsmdY5KWydmyjJ1q-hEEdT0iPZktNOULqbLkEBTVemIQwA3susCeZEMX-3fik-LQtzQBRG5Y8Yl3G9g"
+}
