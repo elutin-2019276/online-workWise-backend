@@ -1,0 +1,310 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "SistemaEmpleo",
+    "collectionId": "59d43c8f-ed34-4b51-b3ce-c5e34bc9154e",
+    "dateExported": "2024-06-30T20:10:07.648Z",
+    "version": "1.2",
+    "folders": [
+        {
+            "_id": "9a99622d-c694-44e4-81c2-e8b2db9a7f12",
+            "name": "WorkOffers",
+            "containerId": "",
+            "created": "2024-06-30T08:13:46.677Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "bc960a1c-e44b-47b0-bcb1-b8be7becdece",
+            "name": "User",
+            "containerId": "",
+            "created": "2024-06-30T08:14:36.440Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "e0403979-f185-481b-9c65-f530fdd2ca87",
+            "name": "FinalOfferHome",
+            "containerId": "",
+            "created": "2024-06-30T19:53:03.609Z",
+            "sortNum": 30000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "5da4efb5-1ac4-41c7-bfd8-38255945a322",
+            "colId": "59d43c8f-ed34-4b51-b3ce-c5e34bc9154e",
+            "containerId": "9a99622d-c694-44e4-81c2-e8b2db9a7f12",
+            "name": "AddWorkOffer",
+            "url": "/workOffer/createWorkOffer",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-06-30T08:14:09.346Z",
+            "modified": "2024-06-30T18:42:03.205Z",
+            "headers": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "title",
+                        "value": "Prueba"
+                    },
+                    {
+                        "name": "problemDescription",
+                        "value": "Dios porfa"
+                    },
+                    {
+                        "name": "user",
+                        "value": "668114e8dfddf13187683ef7"
+                    },
+                    {
+                        "name": "status",
+                        "value": "ACTIVO"
+                    }
+                ]
+            }
+        },
+        {
+            "_id": "236193a4-92ac-4aa7-80fb-f36ed6d9d144",
+            "colId": "59d43c8f-ed34-4b51-b3ce-c5e34bc9154e",
+            "containerId": "bc960a1c-e44b-47b0-bcb1-b8be7becdece",
+            "name": "Register",
+            "url": "/user/register",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-06-30T08:16:07.034Z",
+            "modified": "2024-06-30T18:53:49.521Z",
+            "headers": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "Maldony"
+                    },
+                    {
+                        "name": "username",
+                        "value": "Chuquiej"
+                    },
+                    {
+                        "name": "DPI",
+                        "value": "1234567891262"
+                    },
+                    {
+                        "name": "address",
+                        "value": "Zona 7, Col Landivar"
+                    },
+                    {
+                        "name": "phone",
+                        "value": "09786243"
+                    },
+                    {
+                        "name": "email",
+                        "value": "chuquiej@kinal.edu.gt"
+                    },
+                    {
+                        "name": "password",
+                        "value": "12345678"
+                    }
+                ]
+            }
+        },
+        {
+            "_id": "836064cb-4c42-42e5-a41a-6de19ad59eff",
+            "colId": "59d43c8f-ed34-4b51-b3ce-c5e34bc9154e",
+            "containerId": "9a99622d-c694-44e4-81c2-e8b2db9a7f12",
+            "name": "ListWorkOffer",
+            "url": "/workOffer/getWorkOffers",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-06-30T08:14:20.479Z",
+            "modified": "2024-06-30T18:50:23.411Z",
+            "headers": []
+        },
+        {
+            "_id": "4ce722cb-91bc-4feb-8e54-060dbe3179ce",
+            "colId": "59d43c8f-ed34-4b51-b3ce-c5e34bc9154e",
+            "containerId": "bc960a1c-e44b-47b0-bcb1-b8be7becdece",
+            "name": "Login",
+            "url": "/user/login",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-06-30T08:16:20.238Z",
+            "modified": "2024-06-30T08:16:20.238Z",
+            "headers": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "email",
+                        "value": "bryanx@kinal.edu.gt"
+                    },
+                    {
+                        "name": "password",
+                        "value": "12345678"
+                    }
+                ]
+            }
+        },
+        {
+            "_id": "36a411cf-ff1d-49d5-8d36-a00a9aae47ab",
+            "colId": "59d43c8f-ed34-4b51-b3ce-c5e34bc9154e",
+            "containerId": "9a99622d-c694-44e4-81c2-e8b2db9a7f12",
+            "name": "DeleteWorkOffer",
+            "url": "/workOffer/deleteWorkOffer/668116e2c60938bf0df70dfa",
+            "method": "DELETE",
+            "sortNum": 30000,
+            "created": "2024-06-30T08:14:30.270Z",
+            "modified": "2024-06-30T18:55:29.938Z",
+            "headers": []
+        },
+        {
+            "_id": "c610a411-722c-4660-a5d9-89788428908d",
+            "colId": "59d43c8f-ed34-4b51-b3ce-c5e34bc9154e",
+            "containerId": "9a99622d-c694-44e4-81c2-e8b2db9a7f12",
+            "name": "UpdateWorkOffer",
+            "url": "/workOffer/updateWorkOffer/6681a78b36dabcb72e5fad96",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2024-06-30T18:52:18.362Z",
+            "modified": "2024-06-30T18:54:24.065Z",
+            "headers": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "title",
+                        "value": "NASHE"
+                    },
+                    {
+                        "name": "problemDescription",
+                        "value": "otra pruieba"
+                    },
+                    {
+                        "name": "user",
+                        "value": "6681a9bd2c4caa36ad095d59"
+                    },
+                    {
+                        "name": "Status",
+                        "value": "INACTIVO"
+                    }
+                ]
+            }
+        },
+        {
+            "_id": "67f44abb-3cc7-407d-96f4-9d48477d402f",
+            "colId": "59d43c8f-ed34-4b51-b3ce-c5e34bc9154e",
+            "containerId": "e0403979-f185-481b-9c65-f530fdd2ca87",
+            "name": "AddFinalOfferHome",
+            "url": "/finalOfferHome/createFinalOfferHome",
+            "method": "POST",
+            "sortNum": 60000,
+            "created": "2024-06-30T19:53:18.226Z",
+            "modified": "2024-06-30T19:57:41.087Z",
+            "headers": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "workOffer",
+                        "value": "6681a78b36dabcb72e5fad96"
+                    },
+                    {
+                        "name": "workDate",
+                        "value": ""
+                    },
+                    {
+                        "name": "workSite",
+                        "value": "xcd"
+                    },
+                    {
+                        "name": "price",
+                        "value": "100"
+                    },
+                    {
+                        "name": "user",
+                        "value": "6681a9bd2c4caa36ad095d59"
+                    },
+                    {
+                        "name": "status",
+                        "value": "INACTIVO"
+                    }
+                ]
+            }
+        },
+        {
+            "_id": "1a99e5bd-457a-4ef2-8db6-9276de81428a",
+            "colId": "59d43c8f-ed34-4b51-b3ce-c5e34bc9154e",
+            "containerId": "e0403979-f185-481b-9c65-f530fdd2ca87",
+            "name": "LIstFInalOfferHOme",
+            "url": "/finalOfferHome/getFinalOfferHomes",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2024-06-30T19:58:03.676Z",
+            "modified": "2024-06-30T19:58:46.631Z",
+            "headers": []
+        },
+        {
+            "_id": "949590c7-3a5a-4808-b620-c3d075855a73",
+            "colId": "59d43c8f-ed34-4b51-b3ce-c5e34bc9154e",
+            "containerId": "e0403979-f185-481b-9c65-f530fdd2ca87",
+            "name": "deleteFinalOfferHome",
+            "url": "/finalOfferHome/deleteFinalOfferHome/6681b8b50cd758c73afbe894",
+            "method": "DELETE",
+            "sortNum": 80000,
+            "created": "2024-06-30T19:58:15.936Z",
+            "modified": "2024-06-30T19:59:32.691Z",
+            "headers": []
+        },
+        {
+            "_id": "6223b70c-6226-4a1c-83b9-8bb43235ce70",
+            "colId": "59d43c8f-ed34-4b51-b3ce-c5e34bc9154e",
+            "containerId": "e0403979-f185-481b-9c65-f530fdd2ca87",
+            "name": "updateFinalOfferHome",
+            "url": "/finalOfferHome/updateFinalOfferHome/6681b94f0c25e360d9864771",
+            "method": "PUT",
+            "sortNum": 90000,
+            "created": "2024-06-30T19:58:22.204Z",
+            "modified": "2024-06-30T20:01:42.483Z",
+            "headers": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "workOffer",
+                        "value": "6681a78b36dabcb72e5fad96"
+                    },
+                    {
+                        "name": "workDate",
+                        "value": ""
+                    },
+                    {
+                        "name": "workSite",
+                        "value": "XDXD"
+                    },
+                    {
+                        "name": "price",
+                        "value": "400"
+                    },
+                    {
+                        "name": "user",
+                        "value": "668114e8dfddf13187683ef7"
+                    },
+                    {
+                        "name": "status",
+                        "value": "ACTIVO"
+                    }
+                ]
+            }
+        }
+    ],
+    "settings": {
+        "options": {
+            "baseUrl": "localhost:2880"
+        }
+    },
+    "ref": "7GXNbz_aSgXmehBbCgGf-7ei8O4EMOC9ml8s38lklk8nYyeHv0cW4qyfcpt9E9djk4uTPSM7lFmqlVKzM_rGcA"
+}
