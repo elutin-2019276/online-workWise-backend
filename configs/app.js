@@ -6,9 +6,8 @@ import cors from 'cors'
 import helmet from 'helmet'
 import morgan from 'morgan'
 import { config } from 'dotenv'
-import userRoutes from '../src/User/user.routes.js'
-import workOfferRoutes from '../src/WorkOffer/workOffer.routes.js'
-import finalOfferRoutes from '../src/FinalOfferHome/finalOfferHome.routes.js'
+import userRoutes from '../src/user/user.routes.js'
+import JobSeekerRouter from '../src/JobSeeker/JobSeeker.routes.js'
 
 //Configuraciones
 const app = express() //Crear el servidor
@@ -22,11 +21,10 @@ app.use(cors()) //Aceptar o denegar las solicitudes de diferentes orígenes (loc
 app.use(helmet()) //Aplica capa de seguridad
 app.use(morgan('dev')) //Crea logs de solicitudes al servidor HTTP
 
-
 //Declaración de rutas
-app.use('/user', userRoutes)
-app.use('/workOffer', workOfferRoutes)
-app.use('/finalOfferHome', finalOfferRoutes)
+app.use('/api', JobSeekerRouter)
+app.use(JobSeekerRouter)
+
 
 //Levantar el servidor
 export const initServer = () => {

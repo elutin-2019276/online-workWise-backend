@@ -1,10 +1,29 @@
-import { Router } from "express" 
-import { login, register, test } from './user.controller.js'
+'use strict'
 
-const api = Router() 
+import express from 'express'
 
-api.post('/register', register) 
-api.post('/test', test)
+import {
+    validateJwt,
+} from '../middlewares/validate-jwt.js'
+
+import {
+    test,
+    register,
+    login,
+    update,
+    deleteU,
+    getUser
+} from './user.controller.js'
+
+const api = express.Router()
+
+api.get('/test', test)
+
+api.get('/getUser', getUser)
+api.put('/updateUser/:id', [validateJwt], update)
+api.delete('/deleteUser/:id', [validateJwt], deleteU)
+
+api.post('/register', register)
 api.post('/login', login)
 
-export default api 
+export default api
