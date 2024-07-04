@@ -1,9 +1,8 @@
 {
-    "clientName": "Thunder Client",
+    "client": "Thunder Client",
     "collectionName": "WorkWise",
-    "collectionId": "c573fe2e-9096-4645-b7ea-361820aa6546",
-    "dateExported": "2024-06-27T02:34:51.111Z",
-    "version": "1.2",
+    "dateExported": "2024-07-04T03:35:11.697Z",
+    "version": "1.1",
     "folders": [
         {
             "_id": "c2db28a2-baf6-4c39-8127-a2e1f5648f89",
@@ -11,6 +10,34 @@
             "containerId": "",
             "created": "2024-06-27T02:14:24.025Z",
             "sortNum": 10000
+        },
+        {
+            "_id": "bb2068db-46ab-4a32-9f69-b7064f68d535",
+            "name": "employer",
+            "containerId": "",
+            "created": "2024-07-04T02:22:56.208Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "b0e7d09b-76bd-4b2b-94ff-ae641fafef95",
+            "name": "profession",
+            "containerId": "",
+            "created": "2024-07-04T02:44:01.748Z",
+            "sortNum": 40000
+        },
+        {
+            "_id": "f1ae09ef-0ddb-46bf-aeeb-6aa3412a7df3",
+            "name": "jobSeeker",
+            "containerId": "",
+            "created": "2024-07-04T03:10:04.781Z",
+            "sortNum": 60000
+        },
+        {
+            "_id": "7de1c926-5bd1-458b-b97a-a04a05e0990a",
+            "name": "workOffer",
+            "containerId": "",
+            "created": "2024-07-04T03:23:41.611Z",
+            "sortNum": 80000
         }
     ],
     "requests": [
@@ -23,8 +50,9 @@
             "method": "POST",
             "sortNum": 20000,
             "created": "2024-06-27T02:14:30.593Z",
-            "modified": "2024-06-27T02:18:20.300Z",
+            "modified": "2024-07-04T03:26:37.708Z",
             "headers": [],
+            "params": [],
             "body": {
                 "type": "formencoded",
                 "raw": "",
@@ -35,7 +63,7 @@
                     },
                     {
                         "name": "surname",
-                        "value": "Lutin"
+                        "value": "López"
                     },
                     {
                         "name": "username",
@@ -43,7 +71,7 @@
                     },
                     {
                         "name": "password",
-                        "value": "123"
+                        "value": "12345"
                     },
                     {
                         "name": "phone",
@@ -59,10 +87,11 @@
                     },
                     {
                         "name": "role",
-                        "value": "Empleador"
+                        "value": "Admin"
                     }
                 ]
-            }
+            },
+            "tests": []
         },
         {
             "_id": "846a8ef9-3c00-43e3-b261-89fdf231ae6a",
@@ -73,8 +102,9 @@
             "method": "POST",
             "sortNum": 30000,
             "created": "2024-06-27T02:19:46.609Z",
-            "modified": "2024-06-27T02:20:37.623Z",
+            "modified": "2024-07-04T02:52:28.038Z",
             "headers": [],
+            "params": [],
             "body": {
                 "type": "formencoded",
                 "raw": "",
@@ -85,10 +115,11 @@
                     },
                     {
                         "name": "password",
-                        "value": "123"
+                        "value": "12345"
                     }
                 ]
-            }
+            },
+            "tests": []
         },
         {
             "_id": "7ab3de8e-580a-4062-8bde-f8239dd4cbcf",
@@ -165,12 +196,392 @@
                     "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NjdjY2MxZGIyYjA2ZTk2ZDMwZTMzNzkiLCJ1c2VybmFtZSI6ImVsdXRpbiIsIm5hbWUiOiJFZGdhciIsInJvbGUiOiJFbXBsZWFkb3IiLCJpYXQiOjE3MTk0NTQ4MzcsImV4cCI6MTcxOTQ2NTYzN30.iq7u4VAJL2TZ0UQc0zOJJ9fwiqYjxNbj8JlbpS6AlRc"
                 }
             ]
+        },
+        {
+            "_id": "c9542ab0-ea20-4c51-adf1-9b2244dd402b",
+            "colId": "c573fe2e-9096-4645-b7ea-361820aa6546",
+            "containerId": "bb2068db-46ab-4a32-9f69-b7064f68d535",
+            "name": "saveEmployer",
+            "url": "/employer/saveEmployer",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2024-07-04T02:23:04.557Z",
+            "modified": "2024-07-04T02:36:32.891Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "companyName",
+                        "value": "WorkWise"
+                    },
+                    {
+                        "name": "descriptionCompany",
+                        "value": "Es una empresa que se dedica a conseguir empleos."
+                    },
+                    {
+                        "name": "phone",
+                        "value": "31889900"
+                    },
+                    {
+                        "name": "user",
+                        "value": "66860a933e1e760aebde6022"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "abee8985-0b5f-4a4e-a8a6-e09f7ad2f876",
+            "colId": "c573fe2e-9096-4645-b7ea-361820aa6546",
+            "containerId": "bb2068db-46ab-4a32-9f69-b7064f68d535",
+            "name": "updateEmployer",
+            "url": "/employer/updateEmployer/66860ab03e1e760aebde6025",
+            "method": "PUT",
+            "sortNum": 80000,
+            "created": "2024-07-04T02:37:43.300Z",
+            "modified": "2024-07-04T02:39:27.660Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "companyName",
+                        "value": "Apple INC"
+                    },
+                    {
+                        "name": "descriptionCompany ",
+                        "value": "Es una empresa estadounidense. "
+                    },
+                    {
+                        "name": "phone",
+                        "value": "123455678"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "75d2dbf2-3738-4e5c-bc86-22c82c2d6940",
+            "colId": "c573fe2e-9096-4645-b7ea-361820aa6546",
+            "containerId": "bb2068db-46ab-4a32-9f69-b7064f68d535",
+            "name": "getEmployer",
+            "url": "/employer/getEmployer",
+            "method": "GET",
+            "sortNum": 90000,
+            "created": "2024-07-04T02:40:05.748Z",
+            "modified": "2024-07-04T02:40:15.274Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "deaa3fa9-3fed-43c6-b660-5458f976f86f",
+            "colId": "c573fe2e-9096-4645-b7ea-361820aa6546",
+            "containerId": "bb2068db-46ab-4a32-9f69-b7064f68d535",
+            "name": "deleteEmployer",
+            "url": "/employer/deleteEmployer/66860ab03e1e760aebde6025",
+            "method": "DELETE",
+            "sortNum": 100000,
+            "created": "2024-07-04T02:40:25.169Z",
+            "modified": "2024-07-04T02:40:41.747Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "cc32baea-1f00-4089-8f64-d03f12d2c7d4",
+            "colId": "c573fe2e-9096-4645-b7ea-361820aa6546",
+            "containerId": "b0e7d09b-76bd-4b2b-94ff-ae641fafef95",
+            "name": "saveProfession",
+            "url": "/profession/saveProfession",
+            "method": "POST",
+            "sortNum": 110000,
+            "created": "2024-07-04T02:44:08.166Z",
+            "modified": "2024-07-04T02:58:32.315Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2Njg2MGU2NjIxN2U2OWQ0MzNlYWExNGEiLCJ1c2VybmFtZSI6ImVsdXRpbiIsIm5hbWUiOiJFZGdhciIsInJvbGUiOiJFbXBsZWFkb3IiLCJpYXQiOjE3MjAwNjE1OTQsImV4cCI6MTcyMDA3MjM5NH0.QndqjI-Ui1qTatYQqylLD-QJjbQIMKPhd0rbLfW07n4"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "Mecánico"
+                    },
+                    {
+                        "name": "description",
+                        "value": "Se encarga de reparar autos."
+                    },
+                    {
+                        "name": "user",
+                        "value": "66860e66217e69d433eaa14a"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "e9b101e4-c7ac-4d9a-83bb-b456cf78a7df",
+            "colId": "c573fe2e-9096-4645-b7ea-361820aa6546",
+            "containerId": "b0e7d09b-76bd-4b2b-94ff-ae641fafef95",
+            "name": "getProfession",
+            "url": "/profession/getProfession",
+            "method": "GET",
+            "sortNum": 120000,
+            "created": "2024-07-04T02:54:44.107Z",
+            "modified": "2024-07-04T02:54:53.253Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "2432078e-0f4d-46d5-9e47-81c3ab8ddcb3",
+            "colId": "c573fe2e-9096-4645-b7ea-361820aa6546",
+            "containerId": "b0e7d09b-76bd-4b2b-94ff-ae641fafef95",
+            "name": "updateProfession",
+            "url": "/profession/updateProfession/66860cfcb51f2cefa318feda",
+            "method": "PUT",
+            "sortNum": 130000,
+            "created": "2024-07-04T02:55:30.544Z",
+            "modified": "2024-07-04T02:56:58.330Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2Njg2MGU2NjIxN2U2OWQ0MzNlYWExNGEiLCJ1c2VybmFtZSI6ImVsdXRpbiIsIm5hbWUiOiJFZGdhciIsInJvbGUiOiJFbXBsZWFkb3IiLCJpYXQiOjE3MjAwNjE1OTQsImV4cCI6MTcyMDA3MjM5NH0.QndqjI-Ui1qTatYQqylLD-QJjbQIMKPhd0rbLfW07n4"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "Programador Junior"
+                    },
+                    {
+                        "name": "description",
+                        "value": "Es un programador experto en Java."
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "26f0fd13-f649-4f52-b0c9-841153b0ebcf",
+            "colId": "c573fe2e-9096-4645-b7ea-361820aa6546",
+            "containerId": "b0e7d09b-76bd-4b2b-94ff-ae641fafef95",
+            "name": "deleteProfession",
+            "url": "/profession/deleteProfession/66860fd8217e69d433eaa16c",
+            "method": "DELETE",
+            "sortNum": 140000,
+            "created": "2024-07-04T02:57:14.797Z",
+            "modified": "2024-07-04T02:58:46.049Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2Njg2MGU2NjIxN2U2OWQ0MzNlYWExNGEiLCJ1c2VybmFtZSI6ImVsdXRpbiIsIm5hbWUiOiJFZGdhciIsInJvbGUiOiJFbXBsZWFkb3IiLCJpYXQiOjE3MjAwNjE1OTQsImV4cCI6MTcyMDA3MjM5NH0.QndqjI-Ui1qTatYQqylLD-QJjbQIMKPhd0rbLfW07n4"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "8b3dd649-3d19-4326-8dbb-a0ec15615ac9",
+            "colId": "c573fe2e-9096-4645-b7ea-361820aa6546",
+            "containerId": "f1ae09ef-0ddb-46bf-aeeb-6aa3412a7df3",
+            "name": "SavejobSeeker",
+            "url": "/jobSeeker/save",
+            "method": "POST",
+            "sortNum": 150000,
+            "created": "2024-07-04T03:10:11.406Z",
+            "modified": "2024-07-04T03:13:24.029Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "Edgar Lutin"
+                    },
+                    {
+                        "name": "description",
+                        "value": "Soy estudiante de programación."
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "curriculumVitae",
+                        "value": "c:\\Users\\eluti\\OneDrive\\Imágenes\\Capturas de pantalla\\Screenshot 2024-04-26 193826.png"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "6b491361-efa1-492e-bc7d-f123eea58e42",
+            "colId": "c573fe2e-9096-4645-b7ea-361820aa6546",
+            "containerId": "f1ae09ef-0ddb-46bf-aeeb-6aa3412a7df3",
+            "name": "getJobSeeker",
+            "url": "/jobSeeker/get",
+            "method": "GET",
+            "sortNum": 160000,
+            "created": "2024-07-04T03:15:17.728Z",
+            "modified": "2024-07-04T03:15:33.729Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "287e5eff-71c9-4b33-93a8-7f8fba820cbe",
+            "colId": "c573fe2e-9096-4645-b7ea-361820aa6546",
+            "containerId": "f1ae09ef-0ddb-46bf-aeeb-6aa3412a7df3",
+            "name": "updateJobSeeker",
+            "url": "/jobSeeker/update/6686135c6815a988ef9aa317",
+            "method": "PUT",
+            "sortNum": 170000,
+            "created": "2024-07-04T03:15:46.773Z",
+            "modified": "2024-07-04T03:18:39.243Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "Alexander"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "751594dd-df88-441b-93c6-fb2fda177d91",
+            "colId": "c573fe2e-9096-4645-b7ea-361820aa6546",
+            "containerId": "f1ae09ef-0ddb-46bf-aeeb-6aa3412a7df3",
+            "name": "deleteJobSeeker",
+            "url": "/jobSeeker/delete/6686135c6815a988ef9aa317",
+            "method": "DELETE",
+            "sortNum": 180000,
+            "created": "2024-07-04T03:18:55.314Z",
+            "modified": "2024-07-04T03:19:14.489Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "76ecc848-ee29-46ce-8425-08678d401807",
+            "colId": "c573fe2e-9096-4645-b7ea-361820aa6546",
+            "containerId": "7de1c926-5bd1-458b-b97a-a04a05e0990a",
+            "name": "saveWorkOffer",
+            "url": "/workOffer/saveWorkOffer",
+            "method": "POST",
+            "sortNum": 190000,
+            "created": "2024-07-04T03:23:58.622Z",
+            "modified": "2024-07-04T03:28:03.997Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "title",
+                        "value": "Programador"
+                    },
+                    {
+                        "name": "problemDescription",
+                        "value": "Tiene dificultades a la hora de entrada."
+                    },
+                    {
+                        "name": "workSite",
+                        "value": "Kinal"
+                    },
+                    {
+                        "name": "status",
+                        "value": "ACTIVO"
+                    },
+                    {
+                        "name": "user",
+                        "value": "6686166dcfb88d3130d2dafc"
+                    },
+                    {
+                        "name": "professional",
+                        "value": "668616b84fdb9b434f6a14c3"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "c279c57b-98d9-410c-9b12-5084b1d051b9",
+            "colId": "c573fe2e-9096-4645-b7ea-361820aa6546",
+            "containerId": "7de1c926-5bd1-458b-b97a-a04a05e0990a",
+            "name": "updateWorkOffer",
+            "url": "/workOffer/updateWorkOffer/6686175343fd2c56da72952a",
+            "method": "PUT",
+            "sortNum": 200000,
+            "created": "2024-07-04T03:30:40.622Z",
+            "modified": "2024-07-04T03:31:36.383Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "title",
+                        "value": "Mecánico"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "0d014a48-2dec-4e41-adf9-595d387f3192",
+            "colId": "c573fe2e-9096-4645-b7ea-361820aa6546",
+            "containerId": "7de1c926-5bd1-458b-b97a-a04a05e0990a",
+            "name": "getWorkOffer",
+            "url": "/workOffer/getWorkOffers",
+            "method": "GET",
+            "sortNum": 210000,
+            "created": "2024-07-04T03:31:48.080Z",
+            "modified": "2024-07-04T03:32:08.625Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "585e4005-7b22-4694-a757-f98b9fac9eb0",
+            "colId": "c573fe2e-9096-4645-b7ea-361820aa6546",
+            "containerId": "7de1c926-5bd1-458b-b97a-a04a05e0990a",
+            "name": "deleteWorkOffer",
+            "url": "/workOffer/deleteWorkOffer/6686175343fd2c56da72952a",
+            "method": "DELETE",
+            "sortNum": 220000,
+            "created": "2024-07-04T03:32:19.729Z",
+            "modified": "2024-07-04T03:32:58.965Z",
+            "headers": [],
+            "params": [],
+            "tests": []
         }
     ],
     "settings": {
         "options": {
             "baseUrl": "localhost:2880"
         }
-    },
-    "ref": "53plIIYMsmdY5KWydmyjJ1q-hEEdT0iPZktNOULqbLkEBTVemIQwA3susCeZEMX-3fik-LQtzQBRG5Y8Yl3G9g"
+    }
 }

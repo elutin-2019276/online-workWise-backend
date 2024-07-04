@@ -18,3 +18,14 @@ export const validateJwt = async (req, res, next) => {
         return res.status(401).send({ message: 'Invalid token or expired' })
     }
 }
+
+export const isAdmin = async (req, res, next) => {
+    try {
+        let { role, username } = req.user
+        if (!role || role !== 'ADMIN') return res.status(403).send({ message: `You do not have acces | username ${username}` })
+        next()
+    } catch (err) {
+        console.error(err)
+        return res.status(400).send({ message: 'Unauthorized role' })
+    }
+}
