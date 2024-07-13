@@ -48,6 +48,35 @@ export const login = async (req, res) => {
     }
 }
 
+export const userDefect = async () => {
+    try {
+        const userExists = await User.findOne({ username: 'ADMINB' });
+        if (userExists) {
+            console.log('Usuario existente');
+            return 'Usuario ADMINB ya existe';
+        } else {
+            const encryptPassword = await encrypt('ADMINB');
+            const newUser = new User({
+                name: 'ADMINB',
+                surname: 'ADMINB',
+                username: 'ADMINB',
+                password: encryptPassword,
+                phone: '12345678',
+                locality: 'ADMINB', // Campo opcional, puede ser ajustado según necesidad
+                profession: 'Administrador', // Usar un valor válido del enum
+                role: 'Admin' // Enum ajustado para el rol de Admin
+            });
+            await newUser.save();
+            console.log('Usuario ADMINB creado exitosamente');
+            return 'Usuario ADMINB creado exitosamente';
+        }
+    } catch (err) {
+        console.error('Error al crear usuario ADMIN por defecto', err);
+        throw err; // Lanzar error para manejarlo en el llamador
+    }
+};
+
+
 export const update = async (req, res) => {
     try {
         let { id } = req.params

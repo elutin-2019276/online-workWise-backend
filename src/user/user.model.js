@@ -11,7 +11,8 @@ const userSchema = mongoose.Schema({
     },
     username: {
         type: String,
-        required: true
+        required: true,
+        unique: true // Asegura que los nombres de usuario sean únicos
     },
     password: {
         type: String,
@@ -27,7 +28,7 @@ const userSchema = mongoose.Schema({
     },
     profession: {
         type: String,
-        enum: ['Maestro', 'Programador', 'Arquitecto', 'Plumero', 'Mecánico'],
+        enum: ['Maestro', 'Programador', 'Arquitecto', 'Plumero', 'Mecánico', 'Administrador'], // Añadir 'Administrador' aquí
         required: true
     },
     role: {
@@ -35,6 +36,6 @@ const userSchema = mongoose.Schema({
         enum: ['Empleador', 'Solicitante de empleo', 'Admin'],
         required: true
     }
-})
+});
 
-export default mongoose.model('user', userSchema)
+export default mongoose.model('User', userSchema);
