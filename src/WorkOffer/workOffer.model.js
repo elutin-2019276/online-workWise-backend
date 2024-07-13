@@ -1,4 +1,4 @@
-import {Schema, model} from "mongoose"
+import { Schema, model } from "mongoose"
 
 const workOfferSchema = new Schema({
     title: {
@@ -14,11 +14,11 @@ const workOfferSchema = new Schema({
         ref: 'user',
         required: true
     },
-    /*profesional:{
+    professional: {
         type: Schema.ObjectId,
         ref: 'professional',
         required: true
-    },*/
+    },
     status: {
         type: String,
         enum: ['ACTIVO', 'INACTIVO'],
@@ -28,4 +28,4 @@ const workOfferSchema = new Schema({
     versionKey: false
 })
 
-export default model ('workOffer', workOfferSchema)
+export default model('workOffer', workOfferSchema)

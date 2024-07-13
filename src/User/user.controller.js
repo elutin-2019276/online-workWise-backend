@@ -10,14 +10,14 @@ export const test = (req, res) => {
 
 export const register = async (req, res) => {
     try {
-        let data = req.data
+        let data = req.body;
         data.password = await encrypt(data.password)
-        let user = new User.findOne({ id: data.user })
+        let user = new User(data)
         await user.save()
-        return res.send({ message: 'Registered successfully.' })
+        return res.send({ message: 'Registered succesfully' })
     } catch (err) {
-        console.error(err)
-        return res.status(500).send({ message: 'Error registering user.', err })
+        console.log(err)
+        return res.status(500).send({ message: 'Error registering user', err })
     }
 }
 

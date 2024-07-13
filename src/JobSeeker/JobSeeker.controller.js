@@ -1,9 +1,9 @@
 'use strict'
 
-import JobSeeker from "./JobSeeker.model.js"
+import JobSeeker from "./jobSeeker.model.js"
 import path from 'path'
-import Imagen from './JobSeeker.model.js'
-import curriculum from './JobSeeker.model.js'
+import Imagen from './jobSeeker.model.js'
+import curriculum from './jobSeeker.model.js'
 import { fileURLToPath } from "url"
 import fs from 'fs'
 
@@ -21,60 +21,55 @@ export const save = async (req, res) => {
             const imagen = new Imagen({
                 name: data.name,
                 description: data.description,
-                curriculumVitae : req.file.filename,
+                curriculumVitae: req.file.filename,
             })
             await imagen.save()
-            return res.send({message: 'JobSeeker saved successfully'})
+            return res.send({ message: 'JobSeeker saved successfully.' })
         }
-        return res.status(400).send({message: 'Error saving JobSeeker'})
+        return res.status(400).send({ message: 'Error saving JobSeeker.' })
     } catch (error) {
         console.error(error);
-        return res.status(500).send({ message: 'Error server' });
+        return res.status(500).send({ message: 'Error server.' });
     }
 
 
 }
 
-
-
-export const getImage = async(req, res)=>{
+export const getImage = async (req, res) => {
     const dirname = 'public/uploads/'
     const { imagen } = req.params
-    try{
+    try {
         const img = path.resolve(`${dirname}${imagen}`)
-        if(img)
+        if (img)
             return res.sendFile(img)
         else
-        return res.status(400).send({message: 'Error get Imagen'})
-    }catch(err){
+            return res.status(400).send({ message: 'Error get Imagen.' })
+    } catch (err) {
         console.error(err)
-        return res.status(500).send({message: 'Error al obtener la imagen'})
+        return res.status(500).send({ message: 'Error al obtener la imagen.' })
     }
 }
-
 
 export const get = async (req, res) => {
     try {
         let jobSeeker = await JobSeeker.find()
-        if (jobSeeker.length === 0) return res.status(404).send({ message: 'There are not ' })
+        if (jobSeeker.length === 0) return res.status(404).send({ message: 'There are not. ' })
         return res.send({ jobSeeker })
     } catch (error) {
         console.error(error)
-        return res.status(500).send({ message: 'Error getting jobSeeker' })
+        return res.status(500).send({ message: 'Error getting jobSeeker.' })
     }
 }
-
-
 
 export const deleteJob = async (req, res) => {
     try {
         let { id } = req.params
         let deletedJobSeeker = await JobSeeker.deleteOne({ _id: id })
-        if (deletedJobSeeker.deleteCount == 0) return res.status(404).send({ message: 'Alert not found and not deleted' })
-        return res.send({ message: 'Deleted JobSeeker successfully' })
+        if (deletedJobSeeker.deleteCount == 0) return res.status(404).send({ message: 'Alert not found and not deleted.' })
+        return res.send({ message: 'Deleted JobSeeker successfully.' })
     } catch (error) {
         console.error(error)
-        return res.send({ message: 'Error deleting JobSeeker' })
+        return res.send({ message: 'Error deleting JobSeeker.' })
     }
 }
 
@@ -89,21 +84,19 @@ export const update = async (req, res) => {
             { new: true }
         )
 
-        if (!updatedJob) return res.status(404).send({ message: 'JobSeeker not found and not updated' })
-        return res.send({ message: 'JobSeeker updated successfully', updatedJob })
+        if (!updatedJob) return res.status(404).send({ message: 'JobSeeker not found and not updated.' })
+        return res.send({ message: 'JobSeeker updated successfully.', updatedJob })
     } catch (error) {
         console.error(error)
-        return res.status(500).send({ message: 'Error updating JobSeeker' })
+        return res.status(500).send({ message: 'Error updating JobSeeker.' })
     }
 }
 
-
-
-const validar = (imagen,sevsalida) =>{
+const validar = (imagen, sevsalida) => {
     var errors = []
-    if(sevsalida === 'Y' && !imagen){
-        errors.push('Selecciona una imagen en formato jpg o png')
-    }else{
+    if (sevsalida === 'Y' && !imagen) {
+        errors.push('Select an image in jpg or PNG format.')
+    } else {
         if (errors.length === 0) {
             let filePath = path.join(uploadDir, imagen.filename);
             if (fs.existsSync(filePath)) {

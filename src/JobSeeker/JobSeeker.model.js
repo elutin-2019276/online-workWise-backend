@@ -1,24 +1,23 @@
 'use strict'
 
-import {Schema, model} from "mongoose"
+import { Schema, model } from "mongoose"
 
 const JobSeekerSchema = Schema({
-    name : {
+    name: {
         type: String,
-        required : true
+        required: true
     },
 
-    description : {
+    description: {
         type: String,
         required: false
     },
 
-  curriculumVitae : {
+    curriculumVitae: {
         type: String,
         required: true
     }
 
 })
-
 
 export default model('JobSeeker', JobSeekerSchema)

@@ -1,6 +1,6 @@
 import multer from "multer"
 import path from "path"
-import fs from 'fs' 
+import fs from 'fs'
 import { fileURLToPath } from "url"
 
 //Confguracion de almacenamiento de multer
@@ -11,17 +11,13 @@ import { fileURLToPath } from "url"
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-
 // Define la ruta del directorio de subidas
 const uploadDir = path.join(__dirname, '../public/uploads')
-
-
 
 // Verifica si el directorio de subidas existe, si no, créalo
 if (!fs.existsSync(uploadDir)) {
     fs.mkdirSync(uploadDir, { recursive: true })
 }
-
 
 const guardar = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -35,25 +31,21 @@ const guardar = multer.diskStorage({
     }
 })
 
-
 const filtro = (req, file, cb) => {
-    if (file && (file.mimetype === 'image/jpg' || 
-                 file.mimetype === 'image/jpeg' || 
-                 file.mimetype === 'image/png')) {
+    if (file && (file.mimetype === 'image/jpg' ||
+        file.mimetype === 'image/jpeg' ||
+        file.mimetype === 'image/png')) {
         cb(null, true)
     } else {
         cb(null, false)
     }
 }
 
-
-
 //Configurar multer 
- const upload = multer({
+const upload = multer({
     storage: guardar,
     fileFilter: filtro
 
 })
-
 
 export default upload
