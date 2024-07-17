@@ -23,30 +23,31 @@ export const register = async (req, res) => {
 
 export const login = async (req, res) => {
     try {
-        let { username, password } = req.body
-        let user = await User.findOne({ username })
+        const { username, password } = req.body;
+        const user = await User.findOne({ username });
+        
         if (user && await checkPassword(password, user.password)) {
-            let loggedUser = {
+            const loggedUser = {
                 uid: user._id,
                 username: user.username,
                 name: user.name,
                 role: user.role
-            }
-            let token = await generateJwt(loggedUser)
-            return res.send(
-                {
-                    message: `Welcome ${user.name}`,
-                    loggedUser,
-                    token
-                }
-            )
+            };
+            const token = generateJwt(loggedUser);
+            
+            return res.json({
+                message: `Welcome ${user.name}`,
+                loggedUser,
+                token
+            });
         }
-        return res.status(404).send({ message: 'Invalid credentials.' })
+        
+        return res.status(404).json({ message: 'Invalid credentials.' });
     } catch (err) {
-        console.error(err)
-        return res.status(500).send({ message: 'Failed to login.' })
+        console.error(err);
+        return res.status(500).json({ message: 'Failed to login.' });
     }
-}
+};
 
 export const userDefect = async () => {
     try {
@@ -55,14 +56,14 @@ export const userDefect = async () => {
             console.log('Usuario existente');
             return 'Usuario ADMINB ya existe';
         } else {
-            const encryptPassword = await encrypt('ADMINB');
+            const encryptPassword = await encrypt('ADMINA');
             const newUser = new User({
-                name: 'ADMINB',
-                surname: 'ADMINB',
-                username: 'ADMINB',
+                name: 'ADMINA',
+                surname: 'ADMINA',
+                username: 'ADMINA',
                 password: encryptPassword,
                 phone: '12345678',
-                locality: 'ADMINB', // Campo opcional, puede ser ajustado según necesidad
+                locality: 'ADMINA', // Campo opcional, puede ser ajustado según necesidad
                 profession: 'Administrador', // Usar un valor válido del enum
                 role: 'Admin' // Enum ajustado para el rol de Admin
             });
