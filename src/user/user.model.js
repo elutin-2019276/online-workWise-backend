@@ -25,11 +25,11 @@ const userSchema = mongoose.Schema({
         type: String,
         required: false
     },
-    profession: {
-        type: String,
-        enum: ['Maestro', 'Programador', 'Arquitecto', 'Plumero', 'Mecánico'],
-        required: true
-    },
+    // profession: {
+    //     type: String,
+    //     enum: ['Maestro', 'Programador', 'Arquitecto', 'Plumero', 'Mecánico'],
+    //     required: true
+    // },
     role: {
         type: String,
         enum: ['Empleador', 'Solicitante de empleo', 'Admin'],
@@ -37,4 +37,4 @@ const userSchema = mongoose.Schema({
     }
 })
 
-export default mongoose.model('user', userSchema)
+export default mongoose.models.User || mongoose.model('User', userSchema);

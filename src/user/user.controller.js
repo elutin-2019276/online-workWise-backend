@@ -8,6 +8,32 @@ export const test = (req, res) => {
     return res.send('Hello World.')
 }
 
+export const userDefect = async (req, res) => {
+    try {
+        const userExists = await User.findOne({ username: 'ADMINB' });
+        if (userExists) {
+            console.log('Usuario existente');
+        } else {
+            const encryptPassword = await encrypt('ADMINB');
+            const newUser = new User({
+                name: 'ADMINB',
+                surname: 'Admin', // Agregar el campo requerido 'surname'
+                username: 'ADMINB',
+                password: encryptPassword,
+                email: 'admin@example.com',
+                phone: '12345678',
+                locality: 'Admin', // Campo opcional, puede ser ajustado según necesidad
+                profession: 'Administrador', // Usar un valor válido del enum
+                role: 'Admin' // Usar un valor válido del enum
+            });
+            await newUser.save();
+            console.log('Usuario ADMIN creado exitosamente');
+        }
+    } catch (err) {
+        console.error('Error al crear usuario ADMIN por defecto', err);
+    }
+};
+
 export const register = async (req, res) => {
     try {
         let data = req.body;
