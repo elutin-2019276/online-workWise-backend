@@ -1,30 +1,25 @@
-'use strict'
+import mongoose from 'mongoose';
 
-import { Schema, model } from "mongoose";
-
-const employerSchema = new Schema({
+const employerSchema = new mongoose.Schema({
     companyName: {
         type: String,
-        required: true,
-        unique: true
+        required: true
     },
     descriptionCompany: {
         type: String,
-        required: true,
-        unique: true
+        required: true
     },
     phone: {
         type: String,
-        required: true,
-        unique: true
+        required: true
     },
     user: {
-        type: Schema.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
         required: true
     }
-}, {
-    versionKey: false
 });
 
-export default model('Employer', employerSchema);
+const Employer = mongoose.model('Employer', employerSchema);
+
+export default Employer;

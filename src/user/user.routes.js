@@ -3,7 +3,7 @@
 import express from 'express'
 
 import {
-    validateJwt,
+    validateJwt, isAdmin, isClient
 } from '../middlewares/validate-jwt.js'
 
 import {
@@ -23,7 +23,7 @@ api.get('/getUser', getUser)
 api.put('/updateUser/:id', [validateJwt], update)
 api.delete('/deleteUser/:id', [validateJwt], deleteU)
 
-api.post('/register', register)
-api.post('/login', login)
+api.post('/register',  [validateJwt, isAdmin],register)
+api.post('/login',   login)
 
 export default api

@@ -1,5 +1,6 @@
 'use strict';
 
+import mongoose from 'mongoose';
 import Employer from '../employer/employer.model.js';
 import User from '../user/user.model.js';
 
@@ -17,36 +18,38 @@ export const getEmployer = async (req, res) => {
     }
 };
 
-
 export const saveEmployer = async (req, res) => {
-    const { id, companyName, descriptionCompany, phone, user } = req.body;
+    const { companyName, descriptionCompany, phone, user } = req.body;
+
+    if (!user) {
+        return res.status(400).send({ message: 'User is required.' });
+    }
+
     try {
-        // Verificar si ya existe un empleador con el mismo companyName
-        const existingEmployer = await Employer.findOne({ companyName });
-        if (existingEmployer) {
-            return res.status(400).send({ message: `Employer with company name "${companyName}" already exists.` })
+        const existingUser = await User.findById(user);
+        if (!existingUser) {
+            return res.status(404).send({ message: `User with ID "${user}" not found.` });
         }
-        // Crear un nuevo documento de Employer
-        const newEmployer = new Employer({
-            companyName,
-            descriptionCompany,
-            phone,
-            user
+
+        const newEmployer = new Employer({ 
+            companyName, 
+            descriptionCompany, 
+            phone, 
+            user: new mongoose.Types.ObjectId(user)
         });
+        
         const savedEmployer = await newEmployer.save();
-        // Actualizar el usuario para referenciar al nuevo empleador
-        await User.findByIdAndUpdate(
-            id,
-            { employer: savedEmployer._id },
-            { new: true }
-        );
-        res.status(201).send({ message: 'Employer saved successfully.', employer: savedEmployer })
+        
+        res.status(201).send({
+            message: `Employer saved successfully for user ${existingUser.name}.`,
+            employer: savedEmployer,
+            userName: existingUser.name
+        });
     } catch (error) {
-        console.error('Error saving employer:', error.message, error.stack)
-        res.status(500).send({ message: 'Error saving employer.', error: error.message })
+        console.error('Error saving employer:', error);
+        res.status(500).send({ message: 'Error saving employer.', error: error.message });
     }
 };
-
 
 // Función para actualizar un empleador
 export const updateEmployer = async (req, res) => {
@@ -62,12 +65,12 @@ export const updateEmployer = async (req, res) => {
             }
         );
         if (!updatedEmployer) {
-            return res.status(404).send({ message: 'Employer not found.' })
+            return res.status(404).send({ message: 'Employer not found.' });
         }
-        res.status(200).send(updatedEmployer)
+        res.status(200).send(updatedEmployer);
     } catch (error) {
-        console.error('Error updating employer:', error.message, error.stack)
-        res.status(500).send({ message: 'Error updating employer information.', error: error.message })
+        console.error('Error updating employer:', error.message, error.stack);
+        res.status(500).send({ message: 'Error updating employer information.', error: error.message });
     }
 };
 
@@ -75,13 +78,13 @@ export const updateEmployer = async (req, res) => {
 export const deleteEmployer = async (req, res) => {
     const { id } = req.params;
     try {
-        const deletedEmployer = await Employer.findByIdAndDelete(id)
+        const deletedEmployer = await Employer.findByIdAndDelete(id);
         if (!deletedEmployer) {
-            return res.status(404).send({ message: 'Employer not found.' })
+            return res.status(404).send({ message: 'Employer not found.' });
         }
-        res.status(200).send({ message: 'Employer deleted successfully.' })
+        res.status(200).send({ message: 'Employer deleted successfully.' });
     } catch (error) {
-        console.error('Error deleting employer:', error.message, error.stack)
-        res.status(500).send({ message: 'Error deleting employer.', error: error.message })
+        console.error('Error deleting employer:', error.message, error.stack);
+        res.status(500).send({ message: 'Error deleting employer.', error: error.message });
     }
 };

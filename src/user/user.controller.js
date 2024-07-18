@@ -23,31 +23,30 @@ export const register = async (req, res) => {
 
 export const login = async (req, res) => {
     try {
-        const { username, password } = req.body;
-        const user = await User.findOne({ username });
-        
+        let { username, password } = req.body
+        let user = await User.findOne({ username })
         if (user && await checkPassword(password, user.password)) {
-            const loggedUser = {
+            let loggedUser = {
                 uid: user._id,
                 username: user.username,
                 name: user.name,
                 role: user.role
-            };
-            const token = generateJwt(loggedUser);
-            
-            return res.json({
-                message: `Welcome ${user.name}`,
-                loggedUser,
-                token
-            });
+            }
+            let token = await generateJwt(loggedUser)
+            return res.send(
+                {
+                    message: `Welcome ${user.name}`,
+                    loggedUser,
+                    token
+                }
+            )
         }
-        
-        return res.status(404).json({ message: 'Invalid credentials.' });
+        return res.status(404).send({ message: 'Invalid credentials.' })
     } catch (err) {
-        console.error(err);
-        return res.status(500).json({ message: 'Failed to login.' });
+        console.error(err)
+        return res.status(500).send({ message: 'Failed to login.' })
     }
-};
+}
 
 export const userDefect = async () => {
     try {
@@ -109,7 +108,6 @@ export const deleteU = async (req, res) => {
         return res.status(500).send({ message: 'Error deleting account.' })
     }
 }
-
 
 export const getUser = async (req, res) => {
     try {
